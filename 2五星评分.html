@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>五角星评分案例</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    
+    .comment {
+      font-size: 40px;
+      color: #ff16cf;
+    }
+    
+    .comment li {
+      float: left;
+    }
+    
+    ul {
+      list-style: none;
+    }
+  </style>
+ <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+ </script>
+  <script>
+    $(function () {
+      var wjx_k='☆';
+      var wjx_s='★';
+      $('.comment>li').on('mouseenter',function(){
+        $(this).text(wjx_s).prevAll().text(wjx_s);
+        $(this).nextAll().text(wjx_k);
+      });
+      $('.comment').on('mouseleave',function(){
+        $(this).children().text(wjx_k);
+        $('li.current').text(wjx_s).prevAll().text(wjx_s);
+      });
+      $('.comment>li').on('click',function(){
+        $(this).addClass('current').siblings().removeClass('current');
+      });
+    });
+  </script>
+  
+  
+</head>
+
+<body>
+<ul class="comment">
+  <li>☆</li>
+  <li>☆</li>
+  <li>☆</li>
+  <li>☆</li>
+  <li>☆</li>
+</ul>
+</body>
+
+</html>
