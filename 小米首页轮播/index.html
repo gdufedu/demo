@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米首页轮播图</title>
+    <style>
+        body,ul {
+            margin: 0;
+            padding: 0;
+        }
+        #banner {
+            width: 1226px;
+            height: 460px;
+            background-color: #000;
+            position: relative;
+            margin: 50px auto 0;
+        }
+        ul{
+            list-style-type: none;
+        }
+        .img-item {
+            position: absolute;
+            width: 1226px;
+            height: 460px;
+            display: none;
+        }
+        .btn-list {
+            width: 130px;
+            height: 20px;
+            position: absolute;
+            right: 30px;
+            bottom: 20px;
+        }
+        .btn-item {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #5e5e5e;
+            border: 2px solid #a8a8a8;
+            float: left;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .btn-item:hover {
+            background: #c8c8c8;
+            border-color: #696969;
+        }
+        .active {
+            background: #c8c8c8;
+            border-color: #696969;
+        }
+        .tab-btn {
+            position: absolute;
+            width: 41px;
+            height: 69px;
+            background: url("images/icon-slides.png");
+            cursor: pointer;
+            top: 200px;
+        }
+        .tab-left {
+            left:230px;
+            background-position-x: 83px;
+        }
+        .tab-left:hover {
+            background-position-x: 166px;
+        }
+        .tab-right {
+            right:0;
+            background-position-x: 41px;
+        }
+        .tab-right:hover {
+            background-position-x: 125px;
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+        <div class="img-list">
+            <ul class="img-ul">
+                <li class="img-item" style="display:block;"><img src="images/1.jpg"  width="1226" height="460"></li>
+                <li class="img-item"><img src="images/2.jpg" alt="" width="1226" height="460"></li>
+                <li class="img-item"><img src="images/3.jpg" alt="" width="1226" height="460"></li>
+                <li class="img-item"><img src="images/4.jpg" alt="" width="1226" height="460"></li>
+                <li class="img-item"><img src="images/5.jpg" alt="" width="1226" height="460"></li>
+            </ul>
+        </div>
+        <div class="btn-list">
+            <ul class="btn-ul">
+                <li class="btn-item active"></li>
+                <li class="btn-item"></li>
+                <li class="btn-item"></li>
+                <li class="btn-item"></li>
+                <li class="btn-item"></li>
+            </ul>
+        </div>
+        <div class="tab-btn tab-left"></div>
+        <div class="tab-btn tab-right"></div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script>
+        let index=0;
+        $(".btn-item").click(function(){
+            index=$(this).index();
+            $(this).addClass('active').siblings().removeClass('active');
+            $(".img-item").eq(index).fadeIn().siblings().fadeOut();
+        });
+        $(".tab-right").click(function(){
+            index++;
+            if(index>4){
+                index=0;
+            }
+            $(".img-item").eq(index).fadeIn().siblings().fadeOut();
+            $('.btn-item').eq(index).addClass("active").siblings().removeClass('active');
+        });
+        $(".tab-left").click(function(){
+            index--;
+            if(index<0){
+                index=4;
+            }
+            $(".img-item").eq(index).fadeIn().siblings().fadeOut();
+            $('.btn-item').eq(index).addClass("active").siblings().removeClass('active');
+        });
+    </script>
+</body>
+</html>
