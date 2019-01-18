@@ -111,8 +111,10 @@
 								moveTo('top',val,target,360,0);
 								break;
 							case diffL:
+								moveTo('left',val,target,-230,0);
 								break;
 							case diffR:
+								moveTo('left',val,target,230,0);
 								break;
 							default:
 								break;
@@ -125,13 +127,21 @@
 							aim.children[1].css(from,aspect).enter(to,aspect);
 						}
 					}
+					if(aspect=='left'){
+						if(a=='mouseenter'){
+							aim.children[1].css(from,aspect).enter(to,aspect);
+						}
+					}
 				}
 				Node.prototype.css=function(from,aspect){
 					if(aspect=='top'){
 						this.style[aspect]=from+'px';
 						this.style.left=0;
 					}
-					
+					if(aspect=='left'){
+						this.style[aspect]=from+'px';
+						this.style.top=0;
+					}
 					return this;
 				}
 				Node.prototype.enter=function(to,aspect){
