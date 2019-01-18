@@ -86,29 +86,29 @@
 				</ul>
 			</div>
 			<script>
-				let oBox=document.getElementById('box');
-				let aLi=oBox.getElementsByTagName('li');
+				var oBox=document.getElementById('box');
+				var aLi=oBox.getElementsByTagName('li');
 				oBox.addEventListener('mouseenter',function(e){
 					var target=e.target;
 					if(e.target.tagName.toLowerCase()=='li'){
-						let x=e.clientX;
-						let y=e.clientY;
-						let oT=target.offsetTop;
-						let oB=oT+target.offsetHeight;
-						let oL=target.offsetLeft;
-						let oR=oL+target.offsetWidth;
-						let diffT=Math.abs(y-oT);
-						let diffB=Math.abs(y-oB);
-						let diffL=Math.abs(x-oL);
-						let diffR=Math.abs(x-oR);
-						let direction=Math.min(diffT,diffB,diffL,diffR);
-						let val=e.type.toLowerCase();
+						var x=e.clientX;
+						var y=e.clientY;
+						var oT=target.offsetTop;
+						var oB=oT+target.offsetHeight;
+						var oL=target.offsetLeft;
+						var oR=oL+target.offsetWidth;
+						var diffT=Math.abs(y-oT);
+						var diffB=Math.abs(y-oB);
+						var diffL=Math.abs(x-oL);
+						var diffR=Math.abs(x-oR);
+						var direction=Math.min(diffT,diffB,diffL,diffR);
+						var val=e.type.toLowerCase();
 						switch (direction) {
 							case diffT:
 								moveTo('top',val,target,-360,0);
 								break;
 							case diffB:
-								
+								moveTo('top',val,target,360,0);
 								break;
 							case diffL:
 								break;
@@ -125,13 +125,13 @@
 							aim.children[1].css(from,aspect).enter(to,aspect);
 						}
 					}
-					
 				}
 				Node.prototype.css=function(from,aspect){
 					if(aspect=='top'){
 						this.style[aspect]=from+'px';
 						this.style.left=0;
 					}
+					
 					return this;
 				}
 				Node.prototype.enter=function(to,aspect){
