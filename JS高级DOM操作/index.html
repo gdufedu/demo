@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+ <head>
+	  <meta charset="UTF-8">
+	  <meta name="Keywords" content="">
+	  <meta name="Description" content="">
+	  <title>鼠标方位判断</title>
+	  <style type="text/css">
+			*{
+				padding:0;
+				margin:0
+			}
+			img{
+				vertical-align:middle;
+			}
+			#box{
+				width:1250px;
+				height:360px;
+				margin:100px auto;
+				font-family:'Microsoft yahei';
+			}
+			#box ul li{
+				list-style:none;
+				float:left;
+				margin:0 10px;
+				position:relative;
+				overflow:hidden;
+			}
+			#box ul li a{
+				width:230px;
+				height:360px;
+				position:absolute;
+				left: 0;
+				top: 360px;
+				background:url("images/new-bg.png");
+				text-decoration:none;
+			}
+			#box ul li a p{
+				color:#fff;
+				font-size:14px;
+				text-align:center;
+			}
+			#box ul li a p.p1{
+				padding-top:160px;
+			}
+		</style>
+ </head>
+		<body>
+			<div id='box'>
+				<ul id="list">
+					<li>
+						<img src='images/1.jpg'/>
+						<a href='#'>
+							<p class='p1'>秋冬上新 领券立减20</p>
+							<p>点击进入</p>
+						</a>
+					</li>
+					<li>
+						<img src='images/2.jpg'/>
+						<a href='#'>
+							<p class='p1'>钜惠满138减15</p>
+							<p>点击进入</p>
+						</a>
+					</li>
+					<li>
+						<img src='images/3.jpg'/>
+						<a href='#'>
+							<p class='p1'>冬装尖品 强势登陆</p>
+							<p>点击进入</p>
+						</a>
+					</li>
+					<li>
+						<img src='images/4.jpg'/>
+						<a href='#'>
+							<p class='p1'>十一国庆除出游季</p>
+							<p>购新衣才够【型】</p>
+						</a>
+					</li>
+					<li>
+						<img src='images/5.jpg'/>
+						<a href='#'>
+							<p class='p1'>秋上新</p>
+							<p>点击进入</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<script>
+				let oBox=document.getElementById('box');
+				let aLi=oBox.getElementsByTagName('li');
+				oBox.addEventListener('mouseenter',function(e){
+					var target=e.target;
+					if(e.target.tagName.toLowerCase()=='li'){
+						let x=e.clientX;
+						let y=e.clientY;
+						let oT=target.offsetTop;
+						let oB=oT+target.offsetHeight;
+						let oL=target.offsetLeft;
+						let oR=oL+target.offsetWidth;
+						let diffT=Math.abs(y-oT);
+						let diffB=Math.abs(y-oB);
+						let diffL=Math.abs(x-oL);
+						let diffR=Math.abs(x-oR);
+						let direction=Math.min(diffT,diffB,diffL,diffR);
+						let val=e.type.toLowerCase();
+						switch (direction) {
+							case diffT:
+								moveTo('top',val,target,-360,0);
+								break;
+							case diffB:
+								
+								break;
+							case diffL:
+								break;
+							case diffR:
+								break;
+							default:
+								break;
+						}
+					}					
+				},true);
+				function moveTo(aspect,a,aim,from,to){
+					if(aspect=='top'){
+						if(a=='mouseenter'){
+							aim.children[1].css(from,aspect).enter(to,aspect);
+						}
+					}
+					
+				}
+				Node.prototype.css=function(from,aspect){
+					if(aspect=='top'){
+						this.style[aspect]=from+'px';
+						this.style.left=0;
+					}
+					return this;
+				}
+				Node.prototype.enter=function(to,aspect){
+					setTimeout(function(){
+						this.style[aspect]=to+'px';
+						this.style.transition='.3s';	
+					}.bind(this),0);
+					return this;
+				}
+			</script>
+		</body>
+</html>
