@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>晚会抽奖系统</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            margin: 0;
+            background: url("images/bg.jpg") no-repeat center/100% 100%;
+        }
+        .section {
+            width: 935px;
+            height: 460px;
+            background: rgba(0, 0, 0, .1);
+            margin: 165px auto 0;
+            position: relative;
+        }
+        .section h1 {
+            color: #fff;
+            text-align: center;
+            height: 60px;
+            line-height: 60px;
+        }
+        .section .s-result {
+            height: 400px;
+        }
+        .s-result .number {
+            color: #fff;
+            float: left;
+            width: 160px;
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            margin-left: 21px;
+            margin-top: 35px;
+        }
+        .btn {
+            background: url("images/btn.png");
+            width: 323px;
+            height: 81px;
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            margin-left: -161px;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h1>3号-12号VIP要开始抽奖啦，各位同学准备好了吗?</h1>
+        <div class="s-result">
+        </div>
+        <div class="btn"></div>
+    </div>
+    <script>
+        let oBtn=document.getElementsByClassName("btn")[0];
+        let oResult=document.getElementsByClassName("s-result")[0];
+        let arrName=["丽婷","阳光","婷方","青秋","美瑛","明梦","琼涵","莉莉","佳琦","奕然","艺昕","秀丽","怡宇","卓尔","怡敏","巧丽"];
+        let step=1;
+        let cN=15;
+        oBtn.onclick=function(){
+            step=1;
+            createName();
+        };
+        function getName(){
+            let num=~~(Math.random()*arrName.length);
+            let n=arrName[num];
+            arrName.splice(num,1);
+            return n;
+        }
+        function createName(){
+            if(step>15){
+                return null;
+            }
+            step++;
+            let oDiv=document.createElement("div");
+            oDiv.className="number";
+            let dis=1;
+            let myDis=30;
+            let mySet=setInterval(function(){
+                dis++;
+               if(dis>myDis){
+                oDiv.innerHTML=getName();
+                clearInterval(mySet);
+                createName();
+                return null;
+               }
+               oDiv.innerHTML=arrName[~~(Math.random()*arrName.length)];
+            },50);
+            oResult.appendChild(oDiv);
+        }
+    </script>
+</body>
+</html>
