@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>贪吃蛇</title>
+    <script>
+        var map=null;
+        var food=null;
+        var snake=null;
+        var mytime=null;
+        function Map(){
+            this.width=800;
+            this.height=400;
+            this.color="lightblue";
+            this.showmap=function(){
+                var ban=document.createElement('div');
+                ban.style.width=this.width+'px';
+                ban.style.height=this.height+'px';
+                ban.style.backgroundColor=this.color;
+                ban.style.position="absolute";
+                ban.style.left=0;
+                ban.style.top=0;
+                document.body.appendChild(ban);
+            }
+        }
+        function Food(){
+            this.height=20;
+            this.width=20;
+            this.color="red";
+            this.pice=null;
+            this.showfood=function(){
+                if(this.pice==undefined){
+                    this.pice=document.createElement('div');
+                    this.pice.style.width=this.width+'px';
+                    this.pice.style.height=this.height+'px';
+                    this.pice.style.position="absolute";
+                    this.pice.style.backgroundColor=this.color;
+                }
+                
+                
+                this.weiX=Math.floor(Math.random()*40);
+                this.weiY=Math.floor(Math.random()*20);
+                this.pice.style.left=this.width*this.weiX+"px";
+                this.pice.style.top=this.height*this.weiY+"px";
+                document.body.appendChild(this.pice);
+            }
+        }
+        function Snake(){
+            this.range=20;
+            this.duans=[[0,1,'green',null],[1,1,'green',null],[2,1,'green',null],[3,1,'red',null]];
+            this.redirect="right";
+            this.showduans=function(){
+                for(var i in this.duans){
+                    if(this.duans[i][3]==undefined){
+                        this.duans[i][3]=document.createElement('div');
+                        this.duans[i][3].style.backgroundColor=this.duans[i][2];
+                        this.duans[i][3].style.width=this.range+"px";
+                        this.duans[i][3].style.height=this.range+"px";
+                        this.duans[i][3].style.position="absolute";
+                    }
+                   
+                    
+                    this.duans[i][3].style.left=this.duans[i][0]*this.range+'px';
+                    this.duans[i][3].style.top=this.duans[i][1]*this.range+'px';
+                    document.body.appendChild(this.duans[i][3]);
+                }
+            }
+            this.moveduans=function(){
+                for(var i=0;i<this.duans.length-1;i++){
+                    this.duans[i][0]=this.duans[i+1][0];
+                    this.duans[i][1]=this.duans[i+1][1];
+                }
+                if(this.redirect=="right"){
+                    this.duans[this.duans.length-1][0]+=1;
+                }
+                if(this.redirect=="down"){
+                    this.duans[this.duans.length-1][1]+=1;
+                }
+                if(this.redirect=="left"){
+                    this.duans[this.duans.length-1][0]-=1;
+                }
+                if(this.redirect=="up"){
+                    this.duans[this.duans.length-1][1]-=1;
+                }
+                if(this.duans[this.duans.length-1][0]>39 ||
+                this.duans[this.duans.length-1][0]<0 ||
+                this.duans[this.duans.length-1][1]>19 ||
+                this.duans[this.duans.length-1][1]<0){
+                    alert('game over');
+                    clearInterval(mytime);
+                    return false;
+                }
+                var touX=this.duans[this.duans.length-1][0];
+                var touY=this.duans[this.duans.length-1][1];
+                for(var i=0;i<this.duans.length-1;i++){
+                    if(this.duans[i][0]==touX && this.duans[i][1]==touY){
+                        alert('game over by yourself');
+                        clearInterval(mytime);
+                        return false;
+                    }
+                }
+                var sheX=this.duans[this.duans.length-1][0];
+                var sheY=this.duans[this.duans.length-1][1];
+                var fx=food.weiX;
+                var fy=food.weiY;
+                if(sheX==fx && sheY==fy){
+                    var newduan=[this.duans[0][0],this.duans[0][1],'green',null];
+                    this.duans.unshift(newduan);
+                    food.showfood();
+                }
+                this.showduans();
+            }
+        }
+        window.onload=function(){
+            map=new Map();
+            food=new Food();
+            snake=new Snake();
+            map.showmap();
+            food.showfood();
+            snake.showduans();
+            mytime=setInterval("snake.moveduans()",1000);
+            document.body.onkeydown=function(evt){
+            console.log(evt.keyCode);
+            if(evt.keyCode==38){
+                snake.redirect="up";
+            }
+            if(evt.keyCode==40){
+                snake.redirect="down";
+            }
+            if(evt.keyCode==37){
+                snake.redirect="left";
+            }
+            if(evt.keyCode==39){
+                snake.redirect="right";
+            }
+        };
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
