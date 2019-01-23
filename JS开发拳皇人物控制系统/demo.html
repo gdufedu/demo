@@ -34,19 +34,19 @@
     var skill={
         "IoriYagami":{
             "advance":function(obj){
-                obj.getImg().src = 'xxx'
+                obj.getImg().src = 'images/YAGAMI/advance.gif';
             },
-            "retreat":function(){
-                             
+            "retreat":function(obj){
+                obj.getImg().src = 'images/YAGAMI/retreat.gif';            
             },
-            "boom":function(){
-                               
+            "boom":function(obj){
+                obj.getImg().src = 'images/YAGAMI/boom.gif';            
             }
         }
     }
     var active={
         "68":"advance",
-        "83":"retreat",
+        "65":"retreat",
         "79":"boom"
     };
     function makeCommand(obj,key){
