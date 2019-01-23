@@ -33,8 +33,8 @@
 <script>
     var skill={
         "IoriYagami":{
-            "advance":function(){
-                
+            "advance":function(obj){
+                obj.getImg().src = 'xxx'
             },
             "retreat":function(){
                              
@@ -54,7 +54,7 @@
        
         return function(){
             var name=obj.getName();
-            skill[name][active[key]]();
+            skill[name][active[key]](obj);
             
         };
     };
