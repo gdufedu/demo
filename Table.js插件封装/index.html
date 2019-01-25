@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 500px;
+            border:1px solid red;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+<script src="Table.js"></script>
+<script>
+    let table=new Table({
+        el:"box",
+        thead:{
+            num:"序列号",
+            name:"名字",
+            age:"年龄",
+            sex:"性别",
+            job:"职业",
+            addr:"地址"
+        },
+        data:[
+            {
+            num:1,
+            name:"万章",
+            age:16,
+            sex:"男",
+            job:"高级工程师",
+            addr:"星城长沙"
+        },
+            {
+            num:2,
+            name:"小龙",
+            age:18,
+            sex:"男",
+            job:"全栈工程师",
+            addr:"星城长沙"
+        },
+            {
+            num:3,
+            name:"小龙",
+            age:18,
+            sex:"男",
+            job:"全栈工程师",
+            addr:"星城长沙"
+        },
+            {
+            num:4,
+            name:"小龙",
+            age:18,
+            sex:"男",
+            job:"全栈工程师",
+            addr:"星城长沙"
+        },
+            {
+            num:5,
+            name:"小龙",
+            age:18,
+            sex:"男",
+            job:"全栈工程师",
+            addr:"星城长沙"
+        },
+            {
+            num:6,
+            name:"小龙",
+            age:18,
+            sex:"男",
+            job:"全栈工程师",
+            addr:"星城长沙"
+        },
+            {
+            num:7,
+            name:"小龙",
+            age:18,
+            sex:"男",
+            job:"全栈工程师",
+            addr:"星城长沙"
+        }
+        ]
+    });
+</script>
+</html>
