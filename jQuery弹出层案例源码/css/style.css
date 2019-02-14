@@ -1,0 +1,247 @@
+@charset "utf8";
+*{margin:0;padding:0;}
+body
+{
+	text-align:center;
+	font: 14px/1.5 "微软雅黑",Verdana,Tahoma,Arial,sans-serif,"宋体";
+	line-height:30px;
+}
+ul,li
+{
+	list-style:none;
+}
+/*弹出层遮罩*/
+.layer-mask
+{
+	display: none;
+	z-index: 99999;
+	position: fixed;
+	top : 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background: #000;
+	opacity: 0.5;
+}
+
+/*弹出层窗体*/
+.layer-pop
+{
+	display: none;
+	z-index : 100000;
+	position: fixed;
+	top : 0;
+	left : 0;
+	right : 0;
+	bottom: 0;
+	margin: auto;
+
+	width: 400px;
+	height: 300px;
+	background: #fff;
+}
+/*弹出层关闭按钮*/
+.layer-close
+{
+	float :right;
+	width: 24px;
+	height: 24px;
+	border: 3px solid #fff;
+	text-align: center;
+	line-height: 24px;
+	border-radius: 50%;
+	background: #eee;
+
+	margin-right: -12px;
+	margin-top:-12px; 
+}
+.layer-close:hover
+{
+	cursor: pointer;
+	background: #ccc;
+	color: #fff;
+}
+
+/*登录*/
+.login
+{
+
+}
+.login h4
+{
+	font-size:20px;
+	line-height:50px;
+}
+
+.login label
+{
+	margin-right: 5px;
+    color: #888;
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+}
+
+.login .input
+{
+	border:1px solid #ccc;
+	border-radius:3px;
+	padding:10px 5px;
+	width:250px;
+}
+
+.login .item
+{
+	margin:20px auto;
+}
+
+.login .submit
+{
+	background: #e40;
+	border:1px solid #e40;
+	border-radius:5px;
+	padding:10px 5px;
+	width:250px;
+	color:#fff;
+}
+.login .error-msg
+{
+	color:#e40;
+}
+
+/*慕课网效果*/
+/*顶部*/
+.header
+{
+	height:80px;
+	line-height:80px;
+	text-align : right;
+	margin: 0 20px;
+	overflow:hidden;
+}
+.header .banner
+{
+	float:left;	
+}
+.header .banner span
+{
+	font-size:18px;
+	margin:0 15px;
+	line-height:80px;
+}
+.header .banner img
+{
+	width:150px;
+	vertical-align: middle;
+	margin-right:40px;
+}
+.header a
+{
+	color:#666;
+	text-decoration:none;
+	margin-left:20px;
+}
+/*轮播*/
+.swipe
+{
+	width: 1200px;
+	height: 450px;
+	margin : 0 auto;	
+	overflow:hidden;
+}
+.swipe .ppt
+{
+	width:100%;
+	height:100%;
+}
+.swipe .ppt.first
+{
+	background:url(../images/001.jpg);
+	background-size: cover;
+}
+.swipe .ppt.second
+{
+	background:url(../images/002.jpg);
+	background-size: cover;
+}
+/*导航*/
+.nav
+{
+	position:absolute;
+	width : 280px;
+	height:450px;
+	background: #000;
+	color:#fff;
+
+	filter:alpha(opacity=50);  /*支持 IE 浏览器*/
+	-moz-opacity:0.50; /*支持 FireFox 浏览器*/
+	opacity:0.50;  /*支持 Chrome, Opera, Safari 等浏览器*/
+}
+.nav .item
+{
+	margin: 5px 20px;
+	padding: 10px;
+	text-align:left;
+	border-bottom:1px solid #aaa;
+}
+.nav .item:hover
+{
+	background:#666;
+	cursor: pointer;
+}
+.nav .item .title
+{
+	font-size:16px;
+	margin-bottom:10px;
+}
+.nav .item span
+{
+	margin-right : 9px;
+}
+/*课程排列*/
+.lessions
+{
+	width : 1200px;
+	margin : 0 auto;
+}
+.lessions .title
+{
+	text-align:left;
+	line-height : 45px;
+	color:#666;
+	font-size:16px;
+	margin-top:30px;
+}
+.lessions ul
+{
+	overflow:hidden;
+}
+.lessions li
+{
+	float : left;
+	width : 23%;
+	margin-right: 32px;
+	margin-top: 32px;
+}
+.lessions li img
+{
+	max-width:100%;
+}
+/*页脚*/
+.footer
+{
+	margin-top:50px;
+	padding:50px 0;
+	background: #eee;
+	border-top : 1px solid #ddd;
+}
+.footer .site
+{
+	line-height:100px;
+}
+.footer .site span
+{
+	margin:0 20px;
+	color :#888;
+}

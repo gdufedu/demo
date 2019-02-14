@@ -1,0 +1,212 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jquery弹出层课程代码</title>
+	<script type="text/javascript" src="../js/jquery/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript" src="../js/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+
+	<div class="header">
+		<div class="banner">
+			<img src="../images/003.png">
+			<span><a href="http://coding.imooc.com/">实战</a></span>
+			<span><a href="http://www.imooc.com/course/program">路径</a></span>
+			<span><a href="http://www.imooc.com/wenda">猿问</a></span>
+			<span><a href="http://www.imooc.com/article">手记</a></span>
+		</div>
+		<a id="loginLink" href="#">登录</a>
+		<a id="regeLink" href="#">注册</a>
+	</div>
+
+	<div class="swipe">
+		<div class="nav">
+			<div class="item">
+				<p class="title">前端开发</p>
+				<p>
+					<span>Html / Css</span>
+					<span>Javascript</span>
+					<span>Html5</span>
+				</p>
+			</div>
+			<div class="item">
+				<p class="title">后端开发</p>
+				<p>
+					<span>PHP / Nodejs</span>
+					<span>Java</span>
+					<span>C#</span>
+				</p>
+			</div>
+			<div class="item">
+				<p class="title">移动开发</p>
+				<p>
+					<span>Android</span>
+					<span>iOs</span>
+					<span>Cocos2d-x</span>
+				</p>
+			</div>
+			<div class="item">
+				<p class="title">数据处理</p>
+				<p>
+					<span>Mysql</span>
+					<span>Oracle</span>
+					<span>MongoDB</span>
+				</p>
+			</div>
+		</div>
+		<div class="ppt first"></div>
+	</div>
+
+	<div class="lessions">
+		<p class="title">❤ 热门课程</p>
+		<ul>
+			<li>
+				<img src="../images/004.jpg">
+				<p>JavaScript快速入门</p>
+			</li>
+			<li>
+				<img src="../images/005.jpg">
+				<p>玩转Photoshop</p>
+			</li>
+			<li>
+				<img src="../images/006.jpg">
+				<p>代码编写规范</p>
+			</li>
+
+			<li style="margin-right:0;">
+				<img src="../images/004.jpg">
+				<p>JavaScript快速入门</p>
+			</li>
+			<li>
+				<img src="../images/005.jpg">
+				<p>玩转Photoshop</p>
+			</li>
+			<li>
+				<img src="../images/006.jpg">
+				<p>代码编写规范</p>
+			</li>
+			<li>
+				<img src="../images/004.jpg">
+				<p>JavaScript快速入门</p>
+			</li>
+			<li style="margin-right:0;">
+				<img src="../images/005.jpg">
+				<p>玩转Photoshop</p>
+			</li>
+		</ul>
+	</div>
+
+	<div class="lessions">
+		<p class="title">☆ 最新发布</p>
+		<ul>
+			<li>
+				<img src="../images/004.jpg">
+				<p>JavaScript快速入门</p>
+			</li>
+			<li>
+				<img src="../images/005.jpg">
+				<p>玩转Photoshop</p>
+			</li>
+			<li>
+				<img src="../images/006.jpg">
+				<p>代码编写规范</p>
+			</li>
+
+			<li style="margin-right:0;">
+				<img src="../images/004.jpg">
+				<p>JavaScript快速入门</p>
+			</li>
+			<li>
+				<img src="../images/005.jpg">
+				<p>玩转Photoshop</p>
+			</li>
+			<li>
+				<img src="../images/006.jpg">
+				<p>代码编写规范</p>
+			</li>
+			<li>
+				<img src="../images/004.jpg">
+				<p>JavaScript快速入门</p>
+			</li>
+			<li style="margin-right:0;">
+				<img src="../images/005.jpg">
+				<p>玩转Photoshop</p>
+			</li>
+		</ul>
+	</div>
+
+	<div class="footer">
+		<div class="site">
+			<span>关于我们</span>
+			<span>人才招聘</span>
+			<span>讲师招募</span>
+			<span>联系我们</span>
+			<span>意见反馈</span>
+			<span>友情链接</span>
+		</div>
+		<div class="author">
+			© 2016 imooc.com  京ICP备13046642号
+		</div>
+	</div>
+
+	<!-- 弹出层遮罩 -->
+	<div id="layer-mask" class="layer-mask"></div>
+	<!-- 弹出层窗体 -->
+	<div id="layer-pop" class="layer-pop">
+		<!-- 弹出层关闭按钮 -->
+		<div id="layer-close" class="layer-close">×</div>
+		<!-- 弹出层内容区域 -->
+		<div id="layer-content" class="layer-content">
+			
+		</div>
+	</div>
+
+	<!-- 登录窗体 -->
+	<div id="loginHtml" style="display:none;">
+		<!-- 登录窗体 -->
+		<div class="login">
+			<h4 class="title">登 录</h4>
+			<div class="item">
+				<label>账号</label>
+				<input id="username" class="input" name="username" type="text"/>
+				<p class="error-msg"></p>
+			</div>
+			<div class="item">
+				<label>密码</label>
+				<input id="password" class="input" name="password" type="password"/>
+			</div>
+			<div class="item">
+				<label>&nbsp;</label>
+				<input id="loginSubmitBtn" type="submit" class="submit" value="填写好了"/>
+			</div>
+		</div>
+	</div>
+
+	<!-- 注册窗体 -->
+	<div id="regeHtml" style="display:none;">
+		<!-- 注册窗体 -->
+		<div class="login">
+			<h4 class="title">注 册</h4>
+			<div class="item">
+				<label>账号</label>
+				<input id="username" class="input" name="username" type="text"/>
+				<p class="error-msg"></p>
+			</div>
+			<div class="item">
+				<label>密码</label>
+				<input id="password" class="input" name="password" type="password"/>
+			</div>
+			<div class="item">
+				<label>重复密码</label>
+				<input id="repassword" class="input" name="repassword" type="password"/>
+			</div>
+			<div class="item">
+				<label>&nbsp;</label>
+				<input id="regeSubmitBtn" type="submit" class="submit" value="填写好了"/>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
