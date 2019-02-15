@@ -1,0 +1,16 @@
+<image class="banner" src="/images/about.jpg"></image>
+<view class='block'>
+  <view class='block-title'>关于我们</view>
+  <text class='block-desc'>平安普惠是中国平安保险有限公司旗下成员，专注于服务小微企业和个人的消费金融需求。在中国个人消费贷款领域，平安普惠以创新的科技和卓越的客户体验助力中国实体经济发展。</text>
+</view>
+<view class='block'>
+  <view class='block-title'>关于我们</view>
+  <text class='block-desc'>平安普惠是中国平安保险有限公司旗下成员，专注于服务小微企业和个人的消费金融需求。在中国个人消费贷款领域，平安普惠以创新的科技和卓越的客户体验助力中国实体经济发展。</text>
+</view>
+<view class='block'>
+  <view class='block-title'>关于我们</view>
+  <text class='block-desc'>平安普惠是中国平安保险有限公司旗下成员，专注于服务小微企业和个人的消费金融需求。在中国个人消费贷款领域，平安普惠以创新的科技和卓越的客户体验助力中国实体经济发展。</text>
+</view>
+<view class='footer'>
+  <button bindtap='tell'>电话咨询</button>
+</view>
