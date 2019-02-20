@@ -1,0 +1,12 @@
+<!--pages/movices/movices.wxml-->
+<navigator wx:for='{{moviesArr}}' wx:key="{{index}}" url='/pages/movieDetail/movieDetail?index={{index}}'>
+    <view class="moviesContainer">
+    <image src='{{item.images.large}}' class="movieImg"></image>
+    <view class="movie_detail">
+        <text class="movie_name">{{item.original_title}}</text>
+        <text class="movie_year">年份:{{item.year}}</text>
+        <text class="movie_director">导演:{{item.directors[0].name}}</text>
+    </view>
+    <text class="movie_rating">{{item.rating.average}}</text>
+    </view>
+</navigator>
