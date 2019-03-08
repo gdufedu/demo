@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #app{
+        background: url(a.jpg) no-repeat;
+        width: 200px;
+        height: 300px;
+        margin:100px auto;
+        position: relative;
+    }
+    li {
+        list-style: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;   
+        background: green;  
+        position: absolute;   
+    }
+    li:nth-child(1){
+        top: 14px;
+        right: 7px;
+    }
+    li:nth-child(2){
+        top: 14px;
+        right: 28px;
+    }
+    li:nth-child(3){
+        top: 14px;
+        right: 51px;
+    }
+    li:nth-child(4){
+        top: 53px;
+        right: 51px;
+    }
+    li:nth-child(5){
+        top: 89px;
+        right: 51px;
+    }
+    li:nth-child(6){
+        top: 127px;
+        right: 51px;
+    }
+    li:nth-child(7){
+        top: 127px;
+        right: 74px;
+    }
+    li:nth-child(8){
+        top: 127px;
+        right: 95px;
+    }
+    li:nth-child(9){
+        top: 127px;
+        right: 126px;
+    }
+    li:nth-child(10){
+        top: 127px;
+        right: 154px;
+    }
+    li:nth-child(11){
+        top: 164px;
+        right: 154px;
+    }
+    li:nth-child(12){
+        top: 193px;
+        right: 154px;
+    }
+    li:nth-child(13){
+        top: 231px;
+        right: 154px;
+    }
+    
+    li:nth-child(14){
+        top: 268px;
+        right: 154px;
+    }
+    button.btn {        
+        font-size: 14px;
+        font-weight: bold;
+        position: fixed;
+        bottom: 100px;
+        right: 100px;
+    }
+    .active {
+        background: red;
+    }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <ul>        
+        <li v-for="(item,index) of list" :class="{ active: item.isActive }" :key="index"
+        :current="index"></li>
+    </ul>
+    <button class="btn btn-info" @click="next">下一站</button>
+</div> 
+<script>   
+   
+    let vm=new Vue({
+        el:"#app",
+        data:{
+            list:[
+                {name:"菊树",isActive:true},
+                {name:"龙溪",isActive:false},
+                {name:"金融高新区",isActive:false},
+                {name:"千灯湖",isActive:false},
+                {name:"礌岗",isActive:false},
+                {name:"南桂路",isActive:false},
+                {name:"桂城",isActive:false},
+                {name:"朝安",isActive:false},
+                {name:"普君北路",isActive:false},
+                {name:"祖庙",isActive:false},
+                {name:"同济路",isActive:false},
+                {name:"季华园",isActive:false},
+                {name:"魁奇路",isActive:false},
+                {name:"澜石",isActive:false},
+            ],
+            current:0
+        },
+        methods:{
+            next(){ 
+                this.current++;
+                if(this.current===this.list.length){
+                    this.current=0;
+                } 
+                this.list[this.current].isActive=!this.list[this.current].isActive;                                                                                                                                                             
+            }
+        },        
+    });
+</script>
+</body>
+
+</html>
