@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery幻灯片插件slick演示</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/slick-carousel/1.9.0/slick.min.css">
+    <link href="https://cdn.bootcss.com/slick-carousel/1.9.0/slick-theme.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .slick {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .slick-prev:before, .slick-next:before {
+            position: absolute;
+            left: 0; top: 1px;
+            color: #ccc;
+        }
+        .slick-prev { left: -35px;}
+        .slick-next { right: -35px;}
+        .slick-dots { bottom: -35px;}
+        h1 {
+            margin: 40px;
+            font: 32px Microsoft Yahei;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="">jQuery幻灯片插件slick演示-单个显示</h1>
+
+    <div class="slick">
+    <div><img src="img/bg1.jpg" alt=""></div>
+    <div><img src="img/bg2.jpg" alt=""></div>
+    <div><img src="img/bg3.jpg" alt=""></div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://cdn.bootcss.com/slick-carousel/1.9.0/slick.min.js"></script>
+<script>
+    $(function(){
+        $('.slick').slick({
+            dots: true
+        });
+    });
+</script>
+</html>
