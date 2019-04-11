@@ -1,0 +1,41 @@
+
+.sprite{
+	margin: 10px auto;
+	width: 206px;
+	border: 1px solid #b51600;
+}
+.sprite li{
+	cursor: pointer;
+	height: 42px;
+	width: 206px;
+	background-color: #b51600;
+	border-bottom: 1px solid #911001;
+	border-top: 1px solid #c11e08;
+}
+.sprite li a {
+	color: #fff;
+	line-height: 42px;
+	font-size: 14px;
+}
+
+.sprite li s{
+	height: 40px;
+	width: 24px;
+	display: block;
+	margin-left: 10px;
+	margin-right: 8px;
+	float: left;
+	background-image: url("../images/s-icon.png");
+}
+
+.sprite li:hover{
+	background-color: #fff;
+	border-color: #fff
+}
+.sprite li:hover a{
+	color: #b51600;
+}
+.sprite li:hover s{
+
+}
+
