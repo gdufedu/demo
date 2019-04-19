@@ -60,7 +60,6 @@
       border: 1px solid #dfdfdf;
       border-top: 0;
       display: none;
-      z-index: 101;
     }
     li {
       height: 30px;
@@ -86,7 +85,6 @@
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 100;
       filter: alpha(opacity=0);
       opacity: 0;
       display: none;
@@ -142,6 +140,7 @@
   </script>
 </head>
 <body>
+  <div id="layer"></div>
   <div id="box">
     <div class="province">
       <strong>送货至:</strong>
@@ -165,6 +164,5 @@
       </ul>
     </div>
   </div>
-  <div id="layer"></div>
 </body>
 </html>
