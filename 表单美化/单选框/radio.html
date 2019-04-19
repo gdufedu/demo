@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单美化_单选按钮</title>
+    <link rel="stylesheet" href="css/public.css">
+    <style>
+        body {
+            font: 12px/22px "微软雅黑";
+        }
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+        .type {
+            width: 400px;
+            height: 32px;
+            border: 1px solid #dfdfdf;
+            margin: 30px auto;
+        }
+        .type dl {
+            height: 32px;
+            line-height: 32px;
+            padding-left: 15px;
+        }
+        .type dt {
+            float: left;
+        }
+        .type dd {
+            float: left;
+            margin: 0 10px 0 8px;
+        }
+        .type dd a {
+            display: block;
+            position: relative;
+            padding-left: 23px;
+        }
+        .type dd a:hover {
+            color: #c00;
+            text-decoration: underline;
+        }
+        .type dd b {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background:  url(images/radiobutton.gif) no-repeat -14px -18px;
+        }
+        .type dd a:hover b {
+            background-position: -14px -118px;
+        }
+        .type .selected b,
+        .type .selected a:hover b {
+            background-position: -14px -218px;
+        }
+    </style>
+    <script>
+        function show(index) {
+            let dd = document.getElementById("type").getElementsByTagName("dd");
+            for(let i =0; i < dd.length; i ++) {
+                if(i == index) {
+                    dd[i].className = "selected";
+                } else {
+                    dd[i].className = "";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="type">
+        <!-- <form action="#" method="POST" name="typeForm">
+            <label for="">配送类型:</label>
+            <input type="radio" name="type" checked="checked"/><label for="">全部</label>
+            <input type="radio" name="type"/><label for="">京东配送</label>
+            <input type="radio" name="type"/><label for="">第三方配送</label>
+        </form> -->
+        <dl id="type">
+            <dt>配送类型:</dt>
+            <dd class="selected" onclick="show(0)"><a href="#"><b></b>全部</a></dd>
+            <dd onclick="show(1)"><a href="#"><b></b>京东配送</a></dd>
+            <dd onclick="show(2)"><a href="#"><b></b>第三方配送</a></dd>
+        </dl>
+    </div>
+</body>
+</html>

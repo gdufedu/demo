@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>表单美化_文本框篇</title>
+	<link rel="stylesheet" href="css/public.css">
+	<style>
+		body {
+			font: 14px/28px "微软雅黑";
+		}
+		.contact *:focus {
+			outline: none;
+		}
+		.contact {
+			width: 700px;
+			height: auto;
+			background: #f6f6f6;
+			margin: 40px auto;
+			padding: 10px;
+		}
+		.contact ul {
+			width: 700px;
+		}
+		.contact ul li {
+			border-bottom: 1px solid #dfdfdf;
+			padding: 12px;
+		}
+		.contact ul li label {
+			width: 120px;
+			float: left;
+		}
+		.contact ul li input[type=text] {
+			width: 220px;
+			height: 20px;
+			border: 1px solid #aaa;
+			padding: 3px 8px;
+			background: url(images/red_asterisk.png) no-repeat #fff 98%;
+			border-radius: 5px;
+		}
+		.contact ul li input:focus {
+			border-color: #c00;
+			background-image: url(images/invalid.png);
+		}
+		.contact ul li input[type=text] {
+			transition: padding .25s;
+			-o-transition: padding .25s;
+			-moz-transition: padding .25s;
+			-webkit-transition: padding .25s;
+		}
+		.contact ul li input:focus {
+			padding-right: 70px;
+		}
+	</style>
+</head>
+<body>
+	<div class="contact">
+		<form action="#" method="POST" name="cForm">
+			<ul>
+				<li>
+					<label for="">姓名:</label>
+					<input type="text" name="yourname" placeholder="SunBest" required/>
+				</li>
+			</ul>
+		</form>
+	</div>
+</body>
+</html>

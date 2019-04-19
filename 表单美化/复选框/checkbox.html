@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单美化_复选按钮篇</title>
+    <link rel="stylesheet" href="css/public.css">
+    <style>
+        body {
+            font: 13px/26px "微软雅黑";
+        }
+        .typeList {
+            width: 540px;
+            height: 30px;
+            margin: 50px auto;
+            border: 1px solid #dfdfdf;
+            border-width: 1px 0;
+            overflow: hidden;
+        }
+        .typeList ul {
+            height: 30px;
+            line-height: 30px;
+            padding-left: 15px;
+        }
+        .typeList ul li {
+            position: relative;
+            float: left;
+            margin-right: 12px;
+        }
+        .typeList ul li input {
+            display: none;
+        }
+        .typeList ul li b {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background: url(images/checkbox.gif) no-repeat -12px -18px;
+            display: block;
+        }
+        .typeList ul li label {
+            padding-left: 23px;
+        }
+        .typeList ul li:hover b {
+            background-position: -12px -118px;
+        }
+        .typeList ul .selected b, .typeList ul .selected:hover b {
+            background-position: -12px -218px;
+        }
+    </style>
+    <script>
+        function createTag() {//动态创建b标签
+            let li = document.getElementById("checkList").getElementsByTagName("li");
+            let label;
+            for (let i =0; i <li.length; i ++) {
+                label = li[i].getElementsByTagName("label");
+                let bTag = document.createElement("b");
+                li[i].insertBefore(bTag,label[0]);
+            }
+        }
+        function checklist() {//点击变换效果
+            let li = document.getElementById("checkList").getElementsByTagName("li");
+            for (let i = 0; i <li.length; i ++) {
+                li[i].onclick = function() {
+                    if(this.className == "selected") {
+                        this.className = null;
+                    } else {
+                        this.className = "selected";
+                    }
+                };
+            }
+        }
+        window.onload = function() {
+            createTag();
+            checklist();
+        };
+    </script>
+</head>
+<body>
+    <div class="typeList">
+        <form action="#" method="POST" name="typeList">
+            <ul id="checkList">
+                <li class="selected">
+                    <input type="checkbox" name="typeList" id="xiao">
+                    <label for="xiao">消费者保障</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="typeList" id="broken">
+                    <label for="broken">破损补寄</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="typeList" id="sevendays">
+                    <label for="sevendays">7天退换</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="typeList" id="good">
+                    <label for="good">正品保障</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="typeList" id="ele">
+                    <label for="ele">电子凭证</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="typeList" id="wang">
+                    <label for="wang">旺旺在线</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="typeList" id="pingpai">
+                    <label for="pingpai">品牌授权</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="typeList" id="pay">
+                    <label for="pay">货到付款</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="typeList" id="credit">
+                    <label for="credit">信用卡</label>
+                </li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>
