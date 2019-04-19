@@ -93,7 +93,7 @@
       color: #ccc;
       background-position: 190px -17px;
     }
-    .hide {
+    #selectProvince.hide {
       color: #000;
       background-position: 190px 1px;
     }
@@ -110,8 +110,6 @@
         getDom("allProvince").style.display = "block";
         getDom("layer").style.display = "block";
         getDom("selectProvince").className = "show";
-        getDom("selectProvince").style.backgroundPosition = "190px -17px";
-        getDom("selectProvince").style.color = "#ccc";
         getDom("layer").onclick = function(){
           hideAllProvince();
         };
@@ -123,17 +121,16 @@
         getDom("selectProvince").className = "hide";
       }
       function selectProvince() {
-        var pro = getDom("allProvince").getElementsByTagName("li");
+        var pro = getDom("allProvince");
+        var selectProvince = getDom("selectProvince");
         var links;
-        for(var i = 0; i<pro.length; i ++ ){
-          links = pro[i].getElementsByTagName("span");          
-          for(var j =0; j < links.length; j ++) {
-            links[j].onclick = function() {
-              getDom("selectProvince").innerHTML = this.innerHTML;
-              hideAllProvince();
-            };
+        pro.onclick = function(e) {
+          var el = e.target;
+          if (el.nodeName === "SPAN") {
+            selectProvince.textContent = el.textContent;
+            hideAllProvince();
           }
-        }
+        };
       }
       showProvince();
     };
