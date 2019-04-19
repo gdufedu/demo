@@ -72,6 +72,9 @@ body, ul, li, p, h3 {
 .wrapper:hover .mask{
     opacity: .15;
 }
+.wrapper ul * {
+    transition: all linear 0.1s;
+}
 .wrapper li.big, li.big a{
     width: 314px;
 }
