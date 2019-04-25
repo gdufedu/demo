@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>团购--限时抢</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content3">
+        <div class="time">
+            还剩<span id="LeftTime"></span>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            showTime();
+            function showTime() {
+                let endtime = new Date("2019/5/15,12:20:12");
+                let nowtime = new Date();
+                let lefttime = parseInt((endtime.getTime() -  nowtime.getTime()) / 1000);
+                let d = lefttime / (24 * 60 * 60);
+                d = parseInt(d);
+                let h =lefttime / (60 * 60) % 24;
+                h = parseInt(h);
+                let m = lefttime / 60 % 60;
+                m = parseInt(m);
+                let s = lefttime % 60;
+                s = parseInt(s);
+                document.getElementById('LeftTime').innerHTML = d + '天' + h + '小时' + m + '分' + s + '秒';
+                if(lefttime <= 0) {
+                    document.getElementById('LeftTime').innerHTML = '团购结束';
+                }
+                setTimeout(showTime,500);
+            }
+        }; 
+    </script>
+</body>
+</html>

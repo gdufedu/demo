@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>高考倒计时</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        window.onload = function() {
+            let curtime = new Date();
+            let endtime = new Date("2019,6,6");
+            let lefttime = (endtime.getTime() - curtime.getTime()) / (24 * 60 * 60 * 1000);
+            lefttime = Math.ceil(lefttime);
+            document.getElementById('timeShow').innerHTML = lefttime;
+        };
+    </script>
+</head>
+<body>
+    <div class="content2">
+        <div class="txtshow">
+            <span id="timeShow"></span>
+        </div>
+    </div>
+</body>
+</html>
