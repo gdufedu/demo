@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/news/news",
+    "pages/news/news-detail/news-detail",
+    "pages/movie/movie",
+    "pages/movie/movie-more/movie-more",
+    "pages/movie/movie-detail/movie-detail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#109d59",
+    "navigationBarTitleText": "蓝莓派",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/news/news",
+        "text": "新闻",
+        "iconPath": "pages/images/yuedu.png",
+        "selectedIconPath":"pages/images/yuedu.png"
+      },
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影",
+        "iconPath": "pages/images/diany.png",
+        "selectedIconPath": "pages/images/diany.png"
+      }
+    ],
+    "selectedColor": "#109d59",
+    "borderStyle": "white"
+  }
+}

@@ -1,0 +1,7 @@
+<view class="index-container">
+  <image class="logo" src="../images/logo.png"></image>
+  <text class="username">hello,lily</text>
+  <view class="btn" bindtap="goNewsTap">
+    <text>和音乐一起分享时光</text>
+  </view>
+</view>

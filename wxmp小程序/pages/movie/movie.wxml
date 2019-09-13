@@ -1,0 +1,16 @@
+<import src="movie-list-template/movie-list-template.wxml"/>
+<import src="movie-more/movie-grid-template/movie-grid-template.wxml"/>
+
+<view class="search">
+    <icon type="search" size="13" class="search-img"></icon>
+    <input type="text" placeholder="长城" placeholder-class="placeholder" bindfocus="onBindFocus" bindconfirm="onBindBlur"/>
+     <image wx:if="{{searchPanelShow}}" class="xx-img" src="http://iwen.wiki/sxtstu/php/xx.png" bindtap="onCancelImgTap"></image>
+</view>
+<view class="movie-detail" wx:if="{{containerShow}}">
+  <template is="movielistTemplate" data="{{...comingSoon}}"/>
+  <template is="movielistTemplate" data="{{...inTheaters}}"/>
+  <template is="movielistTemplate" data="{{...Top250}}"/>
+</view>
+<view class="search-panel" wx:if="{{searchPanelShow}}">
+  <template is="movieGridTemplate" data="{{...searchData}}"/>
+</view>
