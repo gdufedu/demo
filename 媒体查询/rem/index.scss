@@ -1,0 +1,93 @@
+@function px2rem($px) {
+    $rem: 37.5px;
+    @return ($px / $rem) + rem;
+}
+html {
+    background-color: #8f8f8f;
+}
+.header {
+    height: px2rem(40px);
+    width: 100%;
+    background-color: red;
+    padding-left: px2rem(23px);
+    .header-item {
+        float: left;
+        font-size: px2rem(16px);
+        color: #ffcdce;
+        margin-right: px2rem(20px);
+        line-height: px2rem(40px);
+        &:nth-child(2) {
+            color: #fff;
+            font-size: px2rem(17px);
+        }
+    }
+}
+.banner-content {
+    position: relative;
+    .banner {
+        display: block;
+        width: 100%;
+        height: px2rem(190px);    
+    }
+    .banner-title {
+        position: absolute;
+        left: px2rem(15px);
+        bottom: px2rem(15px);
+        font-size: px2rem(16px);
+        color: #fff;
+    }
+}
+.news-content {
+    .news-item {
+        width: 100%;
+        height: px2rem(90px);
+        padding-left: px2rem(15px);
+        padding-right: px2rem(15px);
+        box-sizing: border-box;
+    }
+    .item-inner {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        border-bottom: px2rem(1px) solid #e5e5e5;
+    }
+    .news-img {
+        float: left;
+        display: block;
+        margin-top: px2rem(10px);
+        width: px2rem(95px);
+        height: px2rem(70px);
+        margin-right: px2rem(15px);
+    }
+    .news-title {
+        font-size: px2rem(17px);
+        color: #440044;
+        margin-top: px2rem(16px);
+        line-height: px2rem(20px);
+    }
+    .time {
+        position: absolute;
+        left: px2rem(110px);
+        bottom: px2rem(17px);
+        color: #888;
+        font-size: px2rem(12px);
+    }
+    .num {
+        position: absolute;
+        right: px2rem(4px);
+        bottom: px2rem(17px);
+        color: #888;
+        font-size: px2rem(12px);
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: px2rem(-4px);
+            left: px2rem(-23px);
+            width: px2rem(21px);
+            height: px2rem(20px);
+            background-size: contain;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAnklEQVQ4je2TsQ2DQBRDPQIjMAojsEFuBDYIne3q2IQRWCEjMAIbJM1dFH0BoY5iyc29/61f+AAAJJPt+6dJdigi2UVu+1ZhkvQgOQavkiZJE8k18rKTUB8QlHNuJG2StpxzE/l77ygAAOoFe+xSwCX2D/iZgK9l2VGp+AiSben9M3iRNBcvkZf/0e6FAwBs93XYdn84eCbbg+3hbOYFCJL8fjqq1EcAAAAASUVORK5CYII=);
+        }
+    }
+}

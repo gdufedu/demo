@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>当前系统时间</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        window.onload = function() { 
+            showTime();
+            function checkTime(i) {
+                i = i < 10 ? '0' + i : i;
+                return i;
+            }
+            function showTime() {
+                let myDate = new Date();
+                let year = myDate.getFullYear();
+                let month = myDate.getMonth()+1;
+                let date = myDate.getDate();
+                let d = myDate.getDay();
+                let h = myDate.getHours();
+                let m = myDate.getMinutes();
+                let s =myDate.getSeconds();
+                h = checkTime(h);
+                m = checkTime(m);
+                s = checkTime(s);
+                let weekday = new Array(7);
+                weekday[0] = "星期日";
+                weekday[1] = "星期一";
+                weekday[2] = "星期二";
+                weekday[3] = "星期三";
+                weekday[4] = "星期四";
+                weekday[5] = "星期五";
+                weekday[6] = "星期六";
+                document.getElementById('show').innerHTML = year + '年' + month + '月' + date + "日" + weekday[d] + h + ':' + m + ':' + s;
+                setTimeout(showTime,500);
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="content1">
+        <div id="show">显示时间的设置</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+@import "news-template/news-template.wxss";
+.news-container {
+  background-color: #f1f1f1;
+}
+.news-container swiper {
+  width: 100%;
+  height: 350rpx;
+}
+.news-container swiper image {
+  width: 100%;
+}
